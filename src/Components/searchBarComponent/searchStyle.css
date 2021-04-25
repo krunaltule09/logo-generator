@@ -1,6 +1,7 @@
 .header-container {
   height: 70vh;
-  background-color: rgba(0, 0, 0, 0.8);
+  /* background-color: rgba(0, 0, 0, 0.8); */
+  background-color: rgb(202, 202, 123);
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -14,7 +15,8 @@
   padding: 20px 10px;
   /* background-color: white; */
   display: flex;
-
+  padding: 10px 5px;
+  margin: 0 5px;
   width: 60vw;
   align-items: center;
   justify-content: center;
@@ -22,15 +24,28 @@
 
 .wrapper input[type='text'] {
   padding: 10px 25px;
+  background: transparent;
   width: 60vw;
   border: none;
+  line-height: 1.2em;
+  border-bottom: 1px solid black;
   margin-right: 5px;
-  border-radius: 50px 0 0 50px;
+  /* border-radius: 50px 0 0 50px; */
+  font-size: 18px;
+  color: black;
+}
+
+.wrapper select {
+  padding: 10px 5px;
+  width: 20vw;
+  border: none;
+  margin-right: 5px;
+
   font-size: 18px;
 }
 
 .wrapper button {
-  padding: 10px 25px;
+  padding: 10px 5px;
   width: 20vw;
   border: none;
   margin-right: 5px;
@@ -42,7 +57,8 @@
 }
 
 .wrapper input[type='text']:focus,
-.wrapper button:focus {
+.wrapper button:focus,
+.wrapper select:focus {
   outline: none;
 }
 
@@ -52,15 +68,15 @@
   }
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 750px) {
   .header-container {
-    height: 40vh;
+    height: 50vh;
   }
   .wrapper {
     width: 100vw;
   }
 
   .wrapper button {
-    padding: 10px 5px;
+    /* padding: 10px 5px; */
   }
 }

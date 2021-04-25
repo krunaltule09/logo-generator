@@ -12,7 +12,7 @@ const Results=(props)=>{
       {props.show===true?
         <div className="results-container">
             <div className="results">
-              {props.fontsArray.map((font,id) => {
+              {props.fontFamilies[props.selectedFamily].map((font,id) => {
                 return (
                   <Result 
                   name={props.name} 
@@ -20,8 +20,7 @@ const Results=(props)=>{
                   color={props.colorsArray[id]} 
                   key={id}/>
                 )
-
-                
+ 
               })}
             </div>
           </div>:
@@ -36,3 +35,14 @@ const Results=(props)=>{
 }
 
 export default Results
+
+// <Results
+// name={this.state.inputName}
+// fontsArray={fonts}
+// show={this.state.showResults} 
+// showResults={this.showResults}
+// colorsArray={colors}
+// fontFamilies={font_families}
+// selectedFamily={this.state.fontFamily}
+// setFamily={this.setFamily}
+// />

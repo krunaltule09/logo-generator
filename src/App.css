@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Bangers&family=Dancing+Script&family=Indie+Flower&family=Lato:wght@100&family=New+Tegomin&family=Noto+Sans+JP:wght@100&family=Orelega+One&family=Original+Surfer&family=Pacifico&family=Roboto:wght@100&family=Shadows+Into+Light&family=Source+Sans+Pro:wght@200&family=Ubuntu+Mono&display=swap');
 
+/* monospace */
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&family=DM+Mono:wght@300&family=Nova+Mono&family=Roboto+Mono:wght@200&family=Syne+Mono&family=VT323&display=swap');
+
+/* cursive and handwriting */
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Charmonman:wght@700&family=Cookie&family=Dancing+Script&family=Great+Vibes&family=Homemade+Apple&family=Indie+Flower&family=Pacifico&family=Sacramento&family=Satisfy&display=swap');
+
+/* serif */
+
+@import url('https://fonts.googleapis.com/css2?family=Eczar&family=PT+Serif+Caption&family=Pridi:wght@200&family=Spectral:wght@200&family=Suez+One&family=Ultra&display=swap');
+
 * {
   box-sizing: border-box;
 }
@@ -11,5 +22,6 @@ body {
   height: 100vh;
   width: 100vw;
   overflow-x: hidden;
-  font-family: 'Architects Daughter', cursive;
+  background-color: rgb(202, 202, 123);
+  font-family: 'Lato', sans-serif;
 }

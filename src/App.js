@@ -40,13 +40,47 @@ const fonts=[
     "#242B2E"
   ]
 
+  const font_families={
+    "Sans-Serif":["Arial, sans-serif","Lato, sans-serif","Roboto, sans-serif","Helvetica, sans-serif","Gill Sans, sans-serif","Lucida, sans-serif",
+    "Helvetica Narrow, sans-serif","sans-serif",  "New Tegomin, serif",
+    "Noto Sans JP, sans-serif"],
+
+    "Serif":["Times, serif",
+    "Times New Roman, serif",
+    "Palatino, serif",
+    "Bookman, serif",
+    "New Century Schoolbook, serif",
+    "Eczar, serif",
+    "Pridi, serif",
+    "Eczar, serif",
+    "PT Serif Caption, serif",
+    "Spectral, serif",
+    "Suez One, serif",
+    "Ultra, serif"],
+
+    "Monospace":["Andale Mono, monospace","Courier Prime, monospace","Courier, monospace",
+    "DM Mono, monospace","Nova Mono, monospace","monospace","Roboto Mono, monospace","Syne Mono, monospace","VT323, monospace",],
+
+    "Cursive":["Comic Sans, Comic Sans MS, cursive","Caveat, cursive",
+    "Charmonman, cursive","Florence, cursive","Cookie, cursive","cursive",  "Architects Daughter, cursive",
+    "Bangers, cursive",
+    "Dancing Script, cursive",
+    "Indie Flower, cursive",  "Orelega One, cursive",
+    "Original Surfer, cursive",
+    "Pacifico, cursive","Dancing Script, cursive","Great Vibes, cursive","Homemade Apple, cursive","Indie Flower, cursive","Sacramento, cursive","Satisfy, cursive"],
+
+    "Fantasy":["Impact, fantasy","Arnoldboecklin, fantasy","Oldtown, fantasy",
+    "Blippo, fantasy","Brushstroke, fantasy","fantasy"]
+  }
+
 
 
 class App extends Component{
 
   state={
     inputName:"",
-    showResults:false
+    showResults:false,
+    fontFamily:"Sans-Serif"
 
   }
   shuffle(array) {
@@ -88,6 +122,19 @@ class App extends Component{
 
   }
 
+  setFamily=(family)=>{
+    this.setState({
+      fontFamily:family
+      
+    },()=>{
+      this.shuffle(font_families[this.state.fontFamily]);
+    })
+    
+    console.log(font_families[this.state.fontFamily])
+    console.log(family)
+
+  }
+
   showResults=()=>{
     console.log(this.state.inputName);
     this.shuffle(fonts);
@@ -100,6 +147,8 @@ class App extends Component{
     else
     this.setState({
       showResults:true
+    },()=>{
+      this.shuffle(font_families[this.state.fontFamily]);
     })
     
   }
@@ -110,7 +159,11 @@ class App extends Component{
   render(){
     return (
       <div>
-      <SearchBarComponent setname={this.setName} showResults={this.showResults}/>
+        <SearchBarComponent 
+        setname={this.setName} 
+        showResults={this.showResults}
+        setFamily={this.setFamily}
+        />
       
 
         <Results
@@ -119,6 +172,9 @@ class App extends Component{
         show={this.state.showResults} 
         showResults={this.showResults}
         colorsArray={colors}
+        fontFamilies={font_families}
+        selectedFamily={this.state.fontFamily}
+        
         />
    
       </div>
