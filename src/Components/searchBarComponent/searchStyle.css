@@ -1,7 +1,8 @@
 .header-container {
-  height: 70vh;
-  /* background-color: rgba(0, 0, 0, 0.8); */
-  background-color: rgb(202, 202, 123);
+  height: 100vh;
+
+  /* background-color: rgb(202, 202, 123); */
+  background-color: #efe3a1;
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -29,11 +30,15 @@
   border: none;
   line-height: 1.2em;
   border-bottom: 1px solid black;
+
   margin-right: 5px;
 
   /* border-radius: 50px 0 0 50px; */
   font-size: 18px;
   color: black;
+}
+.wrapper input[type='text'].error {
+  border-bottom: 1px solid rgb(179, 58, 58);
 }
 
 .wrapper select {
@@ -58,9 +63,16 @@
 }
 
 .wrapper input[type='text']:focus,
-.wrapper button:focus,
-.wrapper select:focus {
+.wrapper button:focus {
   outline: none;
+}
+
+.submit-btn {
+  transition: transform 0.1s ease 0.1s;
+}
+
+.submit-btn:hover {
+  transform: scale(1.05);
 }
 
 @media only screen and (min-width: 900px) {
@@ -70,9 +82,6 @@
 }
 
 @media only screen and (max-width: 750px) {
-  .header-container {
-    height: 50vh;
-  }
   .wrapper {
     width: 100vw;
   }

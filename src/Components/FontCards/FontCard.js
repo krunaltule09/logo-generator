@@ -13,7 +13,7 @@ function FontCard(props) {
       props.nextStep();
       props.setFamily(props.font)
     }}  
-      className=" font-card " >
+      className=" font-card animate__animated animate__zoomIn animate__slower">
       {props.name}
       <span className="font-name">{props.font}</span>
     </div>

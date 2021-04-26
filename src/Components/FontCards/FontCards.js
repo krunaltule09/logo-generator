@@ -10,9 +10,11 @@ const FontCards=(props)=>{
     <div className="container fontCards"> 
     <Back previousStep={props.previousStep}/>
       
-        {props.fontFamilies.map((font)=>{
+        {props.fontFamilies.map((font,id)=>{
           return(
-            <FontCard 
+            <FontCard  
+            
+            key={id}
             
             nextStep={props.nextStep}
             setFamily={props.setFamily}

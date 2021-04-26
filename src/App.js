@@ -158,6 +158,7 @@ class App extends Component{
           showResults={this.showResults}
           setFamily={this.setFamily}
           nextStep={this.nextStep}
+          name={this.state.inputName}
           />
         )
         break;
