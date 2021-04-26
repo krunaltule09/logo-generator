@@ -62,12 +62,12 @@
   outline: none;
 }
 
-@media only screen and (min-width: 1000px) {
+/* @media only screen and (min-width: 900px) {
   .wrapper {
     width: 700px;
   }
-}
-
+} */
+/* 
 @media only screen and (max-width: 750px) {
   .header-container {
     height: 50vh;
@@ -77,6 +77,6 @@
   }
 
   .wrapper button {
-    /* padding: 10px 5px; */
+    
   }
-}
+} */

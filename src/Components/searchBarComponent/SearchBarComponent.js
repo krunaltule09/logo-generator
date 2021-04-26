@@ -10,17 +10,18 @@ const SearchBarComponent=(props)=>{
         <input placeholder="enter text here" type="text" onChange={(e)=>{
           props.setname(e.target.value);
         }}/>
-        <select onChange={(e)=>{
+        {/* <select onChange={(e)=>{
           props.setFamily(e.target.value);
         }}>
-          <option value="Sans-Serif">Sans Serif</option>
-          <option value="Serif">Serif</option>
-          <option value="Monospace">Monospace</option>
-          <option value="Cursive">Cursive</option>
-          <option value="Fantasy">Fantacy</option>
-        </select>
+          <option value="sans-serif">Sans Serif</option>
+          <option value="serif">Serif</option>
+          <option value="monospace">Monospace</option>
+          <option value="cursive">Cursive</option>
+          <option value="fantasy">Fantacy</option>
+        </select> */}
         <button className="btn submit-btn" onClick={()=>{
-          props.showResults();
+         
+          props.nextStep();
 
         }}>Search</button>
         

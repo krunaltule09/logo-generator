@@ -3,6 +3,7 @@ import React ,{ Component } from "react";
 import SearchBarComponent from './Components/searchBarComponent/SearchBarComponent'
 
 import Results from './Components/Results/Results'
+import Typography from './Components/Typography/Typography'
 
 const fonts=[
   "Architects Daughter, cursive",
@@ -40,12 +41,12 @@ const fonts=[
     "#242B2E"
   ]
 
-  const font_families={
-    "Sans-Serif":["Arial, sans-serif","Lato, sans-serif","Roboto, sans-serif","Helvetica, sans-serif","Gill Sans, sans-serif","Lucida, sans-serif",
+  const fonts_with_families={
+    "sans-serif":["Arial, sans-serif","Lato, sans-serif","Roboto, sans-serif","Helvetica, sans-serif","Gill Sans, sans-serif","Lucida, sans-serif",
     "Helvetica Narrow, sans-serif","sans-serif",  "New Tegomin, serif",
     "Noto Sans JP, sans-serif"],
 
-    "Serif":["Times, serif",
+    "serif":["Times, serif",
     "Times New Roman, serif",
     "Palatino, serif",
     "Bookman, serif",
@@ -58,10 +59,10 @@ const fonts=[
     "Suez One, serif",
     "Ultra, serif"],
 
-    "Monospace":["Andale Mono, monospace","Courier Prime, monospace","Courier, monospace",
+    "monospace":["Andale Mono, monospace","Courier Prime, monospace","Courier, monospace",
     "DM Mono, monospace","Nova Mono, monospace","monospace","Roboto Mono, monospace","Syne Mono, monospace","VT323, monospace",],
 
-    "Cursive":["Comic Sans, Comic Sans MS, cursive","Caveat, cursive",
+    "cursive":["Comic Sans, Comic Sans MS, cursive","Caveat, cursive",
     "Charmonman, cursive","Florence, cursive","Cookie, cursive","cursive",  "Architects Daughter, cursive",
     "Bangers, cursive",
     "Dancing Script, cursive",
@@ -69,9 +70,11 @@ const fonts=[
     "Original Surfer, cursive",
     "Pacifico, cursive","Dancing Script, cursive","Great Vibes, cursive","Homemade Apple, cursive","Indie Flower, cursive","Sacramento, cursive","Satisfy, cursive"],
 
-    "Fantasy":["Impact, fantasy","Arnoldboecklin, fantasy","Oldtown, fantasy",
+    "fantasy":["Impact, fantasy","Arnoldboecklin, fantasy","Oldtown, fantasy",
     "Blippo, fantasy","Brushstroke, fantasy","fantasy"]
   }
+
+  const font_families=['sans-serif','serif','monospace','cursive','fantasy']
 
 
 
@@ -80,9 +83,32 @@ class App extends Component{
   state={
     inputName:"",
     showResults:false,
-    fontFamily:"Sans-Serif"
+    fontFamily:"cursive",
+    step:1,
+
 
   }
+
+  nextStep=()=>{
+    const {step,inputName}=this.state;
+    if(step<3 && inputName!=="")
+    this.setState({
+      step:(step+1)
+    },()=>{
+      console.log(this.state.step)
+    })
+  }
+
+  previousStep=()=>{
+    const {step}=this.state;
+    if(step>1)
+    this.setState({
+      step:step-1
+    },()=>{
+      console.log(this.state.step)
+    })
+  }
+
   shuffle(array) {
     let currentIndex = array.length, temporaryValue, randomIndex;
   
@@ -127,60 +153,87 @@ class App extends Component{
       fontFamily:family
       
     },()=>{
-      this.shuffle(font_families[this.state.fontFamily]);
+      this.shuffle(font_families);
     })
     
-    console.log(font_families[this.state.fontFamily])
-    console.log(family)
+ 
 
   }
 
-  showResults=()=>{
-    console.log(this.state.inputName);
-    this.shuffle(fonts);
-    this.shuffle(colors);
-    console.log(this.state.showResults)
-    if(this.state.inputName==="")
-      this.setState({
-        showResults:false
-      })
-    else
-    this.setState({
-      showResults:true
-    },()=>{
-      this.shuffle(font_families[this.state.fontFamily]);
-    })
-    
-  }
+ 
 
   
 
 
   render(){
-    return (
-      <div>
-        <SearchBarComponent 
-        setname={this.setName} 
-        showResults={this.showResults}
-        setFamily={this.setFamily}
-        />
+
+    switch(this.state.step){
+      case 1:
+        return(
+          <SearchBarComponent 
+          setname={this.setName} 
+          showResults={this.showResults}
+          setFamily={this.setFamily}
+          nextStep={this.nextStep}
+          />
+        )
+        break;
+
+      case 2:
+        return (
+          <Results
+          name={this.state.inputName}
+         colorsArray={colors}
+         fontFamilies={font_families}
+         nextStep={this.nextStep}
+
+         />
+        )
+        break;
+
+        case 3:
+          return(
+            <Typography
+            name={this.state.inputName}
+            
+            nextStep={this.nextStep}
+            
+            colorsArray={colors}
+            fontFamilies={fonts_with_families[this.state.fontFamily]}
+            
+            
+            
+            />
+          )
+
+    }
+
+    // return (
+    //   <div>
+    //     <SearchBarComponent 
+    //     setname={this.setName} 
+    //     showResults={this.showResults}
+    //     setFamily={this.setFamily}
+    //     nextStep={this.nextStep}
+    //     />
       
 
-        <Results
-         name={this.state.inputName}
-        fontsArray={fonts}
-        show={this.state.showResults} 
-        showResults={this.showResults}
-        colorsArray={colors}
-        fontFamilies={font_families}
-        selectedFamily={this.state.fontFamily}
+    //     <Results
+    //      name={this.state.inputName}
+    //     fontsArray={fonts}
+    //     show={this.state.showResults} 
+    //     showResults={this.showResults}
+    //     colorsArray={colors}
+    //     fontFamilies={font_families[this.state.fontFamily]}
+    //     selectedFamily={this.state.fontFamily}
         
-        />
+        
+    //     />
    
-      </div>
+    //   </div>
 
 
-    )
+    // )
   }
 }
 
