@@ -1,0 +1,42 @@
+.fontCards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  width: 100vw;
+  padding: 10px;
+  margin: 0 auto;
+}
+
+.font-card {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  position: relative;
+  min-width: 350px;
+  width: auto;
+  height: 300px;
+  padding: 10px;
+  font-size: 60px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease-out;
+}
+
+.font-card:hover {
+  transform: scale(1.1);
+}
+
+.font-name {
+  font-size: 18px;
+  font-family: 'lato', sans-serif;
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+}

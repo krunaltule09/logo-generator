@@ -4,21 +4,8 @@ import SearchBarComponent from './Components/searchBarComponent/SearchBarCompone
 
 import Results from './Components/Results/Results'
 import Typography from './Components/Typography/Typography'
+import FontCards from './Components/FontCards/FontCards'
 
-const fonts=[
-  "Architects Daughter, cursive",
-  "Bangers, cursive",
-  "Dancing Script, cursive",
-  "Indie Flower, cursive",
-  "Lato, sans-serif",
-  "New Tegomin, serif",
-  "Noto Sans JP, sans-serif",
-  "Orelega One, cursive",
-  "Original Surfer, cursive",
-  "Pacifico, cursive",
-  "Roboto, sans-serif",
-  "Shadows "
-  ]
 
   const colors=[
     "#DE4839",
@@ -83,7 +70,7 @@ class App extends Component{
   state={
     inputName:"",
     showResults:false,
-    fontFamily:"cursive",
+    fontFamily:"",
     step:1,
 
 
@@ -154,16 +141,12 @@ class App extends Component{
       
     },()=>{
       this.shuffle(font_families);
+      console.log(family)
     })
     
  
 
   }
-
- 
-
-  
-
 
   render(){
 
@@ -181,13 +164,17 @@ class App extends Component{
 
       case 2:
         return (
-          <Results
-          name={this.state.inputName}
-         colorsArray={colors}
-         fontFamilies={font_families}
-         nextStep={this.nextStep}
-
-         />
+          <FontCards
+          name={this.state.inputName} 
+          colors={colors}
+          setname={this.setName} 
+          showResults={this.showResults}
+          setFamily={this.setFamily}
+          nextStep={this.nextStep}
+          previousStep={this.previousStep}
+          fontFamilies={font_families}
+          />
+          
         )
         break;
 
@@ -197,7 +184,7 @@ class App extends Component{
             name={this.state.inputName}
             
             nextStep={this.nextStep}
-            
+            previousStep={this.previousStep}
             colorsArray={colors}
             fontFamilies={fonts_with_families[this.state.fontFamily]}
             

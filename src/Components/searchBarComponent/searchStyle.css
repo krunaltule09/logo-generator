@@ -16,7 +16,7 @@
   /* background-color: white; */
   display: flex;
   padding: 10px 5px;
-  margin: 0 5px;
+  margin: 20px 5px;
   width: 60vw;
   align-items: center;
   justify-content: center;
@@ -30,6 +30,7 @@
   line-height: 1.2em;
   border-bottom: 1px solid black;
   margin-right: 5px;
+
   /* border-radius: 50px 0 0 50px; */
   font-size: 18px;
   color: black;
@@ -62,12 +63,12 @@
   outline: none;
 }
 
-/* @media only screen and (min-width: 900px) {
+@media only screen and (min-width: 900px) {
   .wrapper {
     width: 700px;
   }
-} */
-/* 
+}
+
 @media only screen and (max-width: 750px) {
   .header-container {
     height: 50vh;
@@ -75,8 +76,4 @@
   .wrapper {
     width: 100vw;
   }
-
-  .wrapper button {
-    
-  }
-} */
+}

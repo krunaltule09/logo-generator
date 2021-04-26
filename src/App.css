@@ -1,15 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Bangers&family=Dancing+Script&family=Indie+Flower&family=Lato:wght@100&family=New+Tegomin&family=Noto+Sans+JP:wght@100&family=Orelega+One&family=Original+Surfer&family=Pacifico&family=Roboto:wght@100&family=Shadows+Into+Light&family=Source+Sans+Pro:wght@200&family=Ubuntu+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Bangers&family=Dancing+Script&family=Indie+Flower&family=Lato&family=New+Tegomin&family=Noto+Sans+JP&family=Orelega+One&family=Original+Surfer&family=Pacifico&family=Roboto&family=Shadows+Into+Light&family=Source+Sans+Pro&family=Ubuntu+Mono&display=swap');
 
 /* monospace */
-@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&family=DM+Mono:wght@300&family=Nova+Mono&family=Roboto+Mono:wght@200&family=Syne+Mono&family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&family=DM+Mono&family=Nova+Mono&family=Roboto+Mono&family=Syne+Mono&family=VT323&display=swap');
 
 /* cursive and handwriting */
 
-@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Charmonman:wght@700&family=Cookie&family=Dancing+Script&family=Great+Vibes&family=Homemade+Apple&family=Indie+Flower&family=Pacifico&family=Sacramento&family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Charmonman&family=Cookie&family=Dancing+Script&family=Great+Vibes&family=Homemade+Apple&family=Indie+Flower&family=Pacifico&family=Sacramento&family=Satisfy&display=swap');
 
 /* serif */
 
-@import url('https://fonts.googleapis.com/css2?family=Eczar&family=PT+Serif+Caption&family=Pridi:wght@200&family=Spectral:wght@200&family=Suez+One&family=Ultra&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Eczar&family=PT+Serif+Caption&family=Pridi&family=Spectral&family=Suez+One&family=Ultra&display=swap');
 
 * {
   box-sizing: border-box;

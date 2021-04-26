@@ -1,16 +1,28 @@
-.results-container {
-  width: 100vw;
-  /* height: 100vh; */
-  background-color: rgb(202, 202, 123);
-  margin: 30px;
-  padding: 20px;
+.typoCards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 20px 5px;
+  margin-bottom: 10px;
 }
 
-.results {
+.typo-card {
+  background-color: white;
   display: flex;
-  flex-wrap: wrap;
-  width: 95%;
-  flex: 50%;
   justify-content: center;
   align-items: center;
+  margin: 20px;
+  min-width: 600px;
+  width: auto;
+  height: 500px;
+  padding: 15px 10px;
+  font-size: 100px;
+  font-weight: 200;
+  cursor: pointer;
+  transition: transform 0.3s ease-out;
+}
+
+.typo-card:hover {
+  transform: scale(1.1);
 }
